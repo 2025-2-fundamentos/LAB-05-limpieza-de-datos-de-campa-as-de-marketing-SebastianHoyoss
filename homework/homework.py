@@ -8,7 +8,6 @@ import zipfile
 import glob
 import os
 
-
 def clean_campaign_data():
     """
     En esta tarea se le pide que limpie los datos de una campaña de
@@ -40,7 +39,7 @@ def clean_campaign_data():
     - number_contacts
     - contact_duration
     - previous_campaing_contacts
-    - previous_outcome: cmabiar "success" por 1, y cualquier otro valor a 0
+    - previous_outcome: camabiar "success" por 1, y cualquier otro valor a 0
     - campaign_outcome: cambiar "yes" por 1 y cualquier otro valor a 0
     - last_contact_day: crear un valor con el formato "YYYY-MM-DD",
         combinando los campos "day" y "month" con el año 2022.
@@ -53,6 +52,7 @@ def clean_campaign_data():
 
 
     """
+
     zip_files = glob.glob('./files/input/*.zip')                                                #?Busca todos los archivos .zip en la carpeta './files/input'
 
     dataframes = []                                                                             #?Inicializa una lista vacía para almacenar los dataframes leídos
@@ -93,8 +93,9 @@ def clean_campaign_data():
     campaign.to_csv('./files/output/campaign.csv', index = False)                       #?  Guarda el dataframe 'campaign' en un archivo CSV
     economics.to_csv('./files/output/economics.csv', index = False)                     #?# Guarda el dataframe 'economics' en un archivo CSV
 
-    clean_campaign_data()
-    return
+clean_campaign_data()
+
+    #!return
 
 
 if __name__ == "__main__":
